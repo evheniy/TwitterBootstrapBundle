@@ -1,0 +1,6 @@
+services:
+    evheniy.twig.twitter_bootstrap_extension:
+        class: Evheniy\TwitterBootstrapBundle\Twig\TwitterBootstrapExtension
+        arguments: [@service_container]
+        tags:
+            - { name: twig.extension }
