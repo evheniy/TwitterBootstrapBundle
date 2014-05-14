@@ -1,7 +1,7 @@
 TwitterBootstrapBundle
 =================
 
-This bundle provides Twitter Bootstrap in Symfony2 from CDN netdna.bootstrapcdn.com
+This bundle provides [Twitter Bootstrap][1] in Symfony2 from CDN netdna.bootstrapcdn.com
 
 Documentation
 -------------
@@ -59,3 +59,5 @@ License
 This bundle is under the MIT license. See the complete license in the bundle:
 
     Resources/meta/LICENSE
+
+[1]:  http://getbootstrap.com/
