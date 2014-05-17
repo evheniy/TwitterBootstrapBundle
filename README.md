@@ -60,7 +60,7 @@ This bundle is under the MIT license. See the complete license in the bundle:
 
     Resources/meta/LICENSE
     
-    [MakeDev.org][2]
+[MakeDev.org][2]
 
 [1]:  http://getbootstrap.com/
 [2]:  http://makedev.org/
