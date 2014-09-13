@@ -9,7 +9,7 @@ Documentation
 You can change Twitter Bootstrap version:
 
     twitter_bootstrap:
-        version: 3.1.1
+        version: 3.2.0
 
 You can use old html version:
 
@@ -45,7 +45,7 @@ Installation
 
         #TwitterBootstrapBundle
         twitter_bootstrap:
-            version: 3.1.1
+            version: 3.2.0
             html5: true
             async: false
 
