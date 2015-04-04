@@ -115,4 +115,4 @@ This bundle is under the [MIT][3] license.
 
 [1]:  http://makedev.org/articles/symfony/bundles/twitter_bootstrap_bundle.html
 [2]:  http://getbootstrap.com/
-[3]:  https://github.com/evheniy/JqueryBundle/blob/master/Resources/meta/LICENSE
+[3]:  https://github.com/evheniy/TwitterBootstrapBundle/blob/master/Resources/meta/LICENSE
