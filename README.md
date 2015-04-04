@@ -105,6 +105,9 @@ Add this string to your layout (styles and js)
         {%- include "TwitterBootstrapBundle:TwitterBootstrap:js.html.twig" -%}
         </body>
     </html>
+The last step
+
+    app/console assetic:dump --env=prod --no-debug
 
 License
 -------
