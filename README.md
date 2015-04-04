@@ -1,6 +1,8 @@
 TwitterBootstrapBundle
 =================
 
+[![knpbundles.com](http://knpbundles.com/evheniy/TwitterBootstrapBundle/badge)](http://knpbundles.com/evheniy/TwitterBootstrapBundle)
+
 This bundle provides TwitterBootstrap in Symfony2 from CDN maxcdn.bootstrapcdn.com
 
 Documentation
