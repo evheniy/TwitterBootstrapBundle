@@ -30,11 +30,7 @@ class TwitterBootstrapExtension extends \Twig_Extension
     public function getGlobals()
     {
         return array(
-            'twitter_bootstrap' => array(
-                'version' => $this->container->getParameter('twitter_bootstrap.version'),
-                'html5'   => $this->container->getParameter('twitter_bootstrap.html5'),
-                'async'   => $this->container->getParameter('twitter_bootstrap.async'),
-            )
+            'twitter_bootstrap' => $this->container->getParameter('twitter_bootstrap')
         );
     }
 

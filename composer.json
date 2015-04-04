@@ -1,7 +1,8 @@
 {
     "name": "evheniy/twitter-bootstrap-bundle",
+    "version": "1.0",
     "description": "The TwitterBootstrapBundle adds the ability to add latest Twitter Bootstrap to your application.",
-    "keywords": ["Twitter Bootstrap", "Twitter","Bootstrap", "Symfony", "latest"],
+    "keywords": ["Twitter Bootstrap", "Twitter","Bootstrap", "Symfony2", "latest"],
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [

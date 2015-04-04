@@ -1,1 +1,12 @@
+{%- javascripts '%twitter_bootstrap.local_js%' output='js/bootstrap.js' -%}
 <script{%- if twitter_bootstrap.html5 == false %} type="text/javascript"{%- endif %} src="https://maxcdn.bootstrapcdn.com/bootstrap/{{- twitter_bootstrap.version -}}/js/bootstrap.min.js"{%- if twitter_bootstrap.async %} async="async"{%- endif -%}></script>
+<script>window.jQuery || document.write('<script{%- if twitter_bootstrap.html5 == false %} type="text/javascript"{%- endif %} src="{{- twitter_bootstrap.local_cdn -}}{{- asset_url -}}"{%- if twitter_bootstrap.async %} async="async"{%- endif -%}>\x3C/script>');</script>
+{%- endjavascripts -%}
+{%- stylesheets '%twitter_bootstrap.local_fonts_dir%glyphicons-halflings-regular.eot' output='fonts/glyphicons-halflings-regular.eot' -%}{%- endstylesheets -%}
+{%- stylesheets '%twitter_bootstrap.local_fonts_dir%glyphicons-halflings-regular.svg' output='fonts/glyphicons-halflings-regular.svg' -%}{%- endstylesheets -%}
+{%- stylesheets '%twitter_bootstrap.local_fonts_dir%glyphicons-halflings-regular.ttf' output='fonts/glyphicons-halflings-regular.ttf' -%}{%- endstylesheets -%}
+{%- stylesheets '%twitter_bootstrap.local_fonts_dir%glyphicons-halflings-regular.woff' output='fonts/glyphicons-halflings-regular.woff' -%}{%- endstylesheets -%}
+{%- stylesheets '%twitter_bootstrap.local_fonts_dir%glyphicons-halflings-regular.woff2' output='fonts/glyphicons-halflings-regular.woff2' -%}{%- endstylesheets -%}
+{%- stylesheets '%twitter_bootstrap.local_css%' '%twitter_bootstrap.local_theme%' output='css/bootstrap.css' -%}
+<script>(function ($) {$(function () {if ($('body').css('color') !== 'rgb(51, 51, 51)') {$('head').prepend('<link rel="stylesheet" href="{{- twitter_bootstrap.local_cdn -}}{{- asset_url -}}">');}});})(window.jQuery);</script>
+{%- endstylesheets -%}
