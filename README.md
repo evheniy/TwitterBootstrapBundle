@@ -3,6 +3,8 @@ TwitterBootstrapBundle
 
 [![knpbundles.com](http://knpbundles.com/evheniy/TwitterBootstrapBundle/badge)](http://knpbundles.com/evheniy/TwitterBootstrapBundle)
 
+[![Latest Stable Version](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/v/stable.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![Total Downloads](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/downloads.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![Latest Unstable Version](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/v/unstable.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![License](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/license.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle)
+
 This bundle provides TwitterBootstrap in Symfony2 from CDN maxcdn.bootstrapcdn.com
 
 Documentation
