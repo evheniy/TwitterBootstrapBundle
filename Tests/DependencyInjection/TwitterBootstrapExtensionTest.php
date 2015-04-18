@@ -37,11 +37,15 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @param ContainerBuilder $container
      * @param string           $resource
+     *
+     * @return ContainerBuilder
      */
     protected function loadConfiguration(ContainerBuilder $container, $resource)
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/Fixtures/'));
         $loader->load($resource . '.yml');
+
+        return $container;
     }
 
     /**
@@ -50,14 +54,7 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     public function testWithoutConfiguration()
     {
         $this->container->loadFromExtension($this->extension->getAlias())->compile();
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap'));
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_js'));
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_fonts_dir'));
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_css'));
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_theme'));
-        $twitterBootstrap = $this->container->getParameter('twitter_bootstrap');
-        $this->assertNotEmpty($twitterBootstrap);
-        $this->assertTrue(is_array($twitterBootstrap));
+        $twitterBootstrap = $this->assertTwitterBootstrap();
         $this->assertNotEmpty($twitterBootstrap['local_js']);
         $this->assertEquals($twitterBootstrap['local_js'], '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js');
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js');
@@ -81,12 +78,10 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test normal config
+     * @return array
      */
-    public function testWithLocal()
+    protected function assertTwitterBootstrap()
     {
-        $this->loadConfiguration($this->container, 'withLocal');
-        $this->container->compile();
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap'));
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_js'));
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_fonts_dir'));
@@ -95,6 +90,17 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
         $twitterBootstrap = $this->container->getParameter('twitter_bootstrap');
         $this->assertNotEmpty($twitterBootstrap);
         $this->assertTrue(is_array($twitterBootstrap));
+
+        return $twitterBootstrap;
+    }
+
+    /**
+     * Test normal config
+     */
+    public function testWithLocal()
+    {
+        $this->loadConfiguration($this->container, 'withLocal')->compile();
+        $twitterBootstrap = $this->assertTwitterBootstrap();
         $this->assertNotEmpty($twitterBootstrap['local_js']);
         $this->assertEquals($twitterBootstrap['local_js'], 'bootstrap.min.js');
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), 'bootstrap.min.js');
@@ -114,16 +120,8 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testTest()
     {
-        $this->loadConfiguration($this->container, 'test');
-        $this->container->compile();
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap'));
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_js'));
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_fonts_dir'));
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_css'));
-        $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_theme'));
-        $twitterBootstrap = $this->container->getParameter('twitter_bootstrap');
-        $this->assertNotEmpty($twitterBootstrap);
-        $this->assertTrue(is_array($twitterBootstrap));
+        $this->loadConfiguration($this->container, 'test')->compile();
+        $twitterBootstrap = $this->assertTwitterBootstrap();
         $this->assertNotEmpty($twitterBootstrap['local_js']);
         $this->assertEquals($twitterBootstrap['local_js'], 'bootstrap.min.js');
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), 'bootstrap.min.js');
