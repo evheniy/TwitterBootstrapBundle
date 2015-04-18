@@ -5,31 +5,48 @@ TwitterBootstrapBundle
 
 [![Latest Stable Version](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/v/stable.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![Total Downloads](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/downloads.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![Latest Unstable Version](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/v/unstable.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![License](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/license.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle)
 
+
+
+
+
 This bundle provides TwitterBootstrap in Symfony2 from CDN maxcdn.bootstrapcdn.com
 
 Documentation
 -------------
 
-You should set TwitterBootstrap local version (it helps if maxcdn doesn't work).
-Those parameters are required:
-
-    twitter_bootstrap:
-        local_js: '@AppBundle/Resources/public/js/bootstrap.min.js'
-        local_fonts_dir: '@AppBundle/Resources/public/fonts/'
-        local_css: '@AppBundle/Resources/public/css/bootstrap.min.css'
-        local_theme: '@AppBundle/Resources/public/css/bootstrap-theme.min.css'
-
-
-
 You can change TwitterBootstrap version:
 
     twitter_bootstrap:
         version: 3.3.4
+        
+You can set TwitterBootstrap local version (it helps if maxcdn doesn't work).
+Those parameters are required:
+
+    twitter_bootstrap:
+        local_js: '@AppBundle/Resources/public/js/bootstrap.min.js'
+
+Default value: '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js'
+
+    twitter_bootstrap:
+        local_fonts_dir: '@AppBundle/Resources/public/fonts/'
+
+Default value: '@TwitterBootstrapBundle/Resources/public/fonts/' 
+ 
+    twitter_bootstrap:
+        local_css: '@AppBundle/Resources/public/css/bootstrap.min.css'
+
+Default value: '@TwitterBootstrapBundle/Resources/public/css/bootstrap.min.css'
+
+    twitter_bootstrap:
+        local_theme: '@AppBundle/Resources/public/css/bootstrap-theme.min.css'
+
+Default value: '@TwitterBootstrapBundle/Resources/public/css/bootstrap-theme.min.css'
+        
 
 You can set local CDN:
 
     twitter_bootstrap:
-        local_cdn: 'http://img.domain.com/'
+        local_cdn: 'cdn.domain.com'
 
 
 You can use old html version:
@@ -68,11 +85,7 @@ AppKernel:
 config.yml:
 
     #TwitterBootstrapBundle
-    twitter_bootstrap:
-        local_js: '@AppBundle/Resources/public/js/bootstrap.min.js'
-        local_fonts_dir: '@AppBundle/Resources/public/fonts/'
-        local_css: '@AppBundle/Resources/public/css/bootstrap.min.css'
-        local_theme: '@AppBundle/Resources/public/css/bootstrap-theme.min.css'
+    twitter_bootstrap: ~
 
     or
 
@@ -82,7 +95,7 @@ config.yml:
         local_fonts_dir: '@AppBundle/Resources/public/fonts/'
         local_css: '@AppBundle/Resources/public/css/bootstrap.min.css'
         local_theme: '@AppBundle/Resources/public/css/bootstrap-theme.min.css'
-        local_cdn: 'http://img.domain.com/'
+        local_cdn: 'cdn.domain.com'
         version: 3.3.4
         html5: true
         async: false

@@ -1,3 +1,0 @@
-twitter_bootstrap:
-    local_js: 'bootstrap.min.js'
-    local_fonts_dir: 'fonts/'

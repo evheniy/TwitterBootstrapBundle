@@ -36,10 +36,19 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     public function testWithId()
     {
         $this->container->setParameter('twitter_bootstrap', array('local_js' => 'test'));
-
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap'));
-        $this->assertEquals($this->container->getParameter('twitter_bootstrap')['local_js'], 'test');
-        $this->assertEquals($this->extension->getGlobals()['twitter_bootstrap']['local_js'], 'test');
+        $twitterBootstrap = $this->container->getParameter('twitter_bootstrap');
+        $this->assertNotEmpty($twitterBootstrap);
+        $this->assertTrue(is_array($twitterBootstrap));
+        $this->assertNotEmpty($twitterBootstrap['local_js']);
+        $this->assertEquals($twitterBootstrap['local_js'], 'test');
+        $globals = $this->extension->getGlobals();
+        $this->assertNotEmpty($globals);
+        $this->assertTrue(is_array($globals));
+        $this->assertNotEmpty($globals['twitter_bootstrap']);
+        $this->assertTrue(is_array($globals['twitter_bootstrap']));
+        $this->assertNotEmpty($globals['twitter_bootstrap']['local_js']);
+        $this->assertEquals($globals['twitter_bootstrap']['local_js'], 'test');
     }
 
     /**
@@ -52,7 +61,7 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
             'Exception',
             'You have requested a non-existent parameter "twitter_bootstrap".'
         );
-        $this->assertTrue(empty($this->extension->getGlobals()));
+        $this->assertNotEmpty($this->extension->getGlobals());
     }
 
     /**
