@@ -54,7 +54,7 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     public function testWithoutConfiguration()
     {
         $this->container->loadFromExtension($this->extension->getAlias())->compile();
-        $twitterBootstrap = $this->assertTwitterBootstrap(1);
+        $twitterBootstrap = $this->assertTwitterBootstrap();
         $this->assertNotEmpty($twitterBootstrap['local_js']);
         $this->assertEquals($twitterBootstrap['local_js'], '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js');
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js');
@@ -97,31 +97,10 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * Test normal config
      */
-    public function testWithLocal()
-    {
-        $this->loadConfiguration($this->container, 'withLocal')->compile();
-        $twitterBootstrap = $this->assertTwitterBootstrap(2);
-        $this->assertNotEmpty($twitterBootstrap['local_js']);
-        $this->assertEquals($twitterBootstrap['local_js'], 'bootstrap.min.js');
-        $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), 'bootstrap.min.js');
-        $this->assertNotEmpty($twitterBootstrap['local_fonts_dir']);
-        $this->assertEquals($twitterBootstrap['local_fonts_dir'], 'fonts/');
-        $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_fonts_dir'), 'fonts/');
-        $this->assertNotEmpty($twitterBootstrap['local_css']);
-        $this->assertEquals($twitterBootstrap['local_css'], 'bootstrap.min.css');
-        $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_css'), 'bootstrap.min.css');
-        $this->assertNotEmpty($twitterBootstrap['local_theme']);
-        $this->assertEquals($twitterBootstrap['local_theme'], 'bootstrap-theme.min.css');
-        $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_theme'), 'bootstrap-theme.min.css');
-    }
-
-    /**
-     * Test normal config
-     */
     public function testTest()
     {
         $this->loadConfiguration($this->container, 'test')->compile();
-        $twitterBootstrap = $this->assertTwitterBootstrap(3);
+        $twitterBootstrap = $this->assertTwitterBootstrap();
         $this->assertNotEmpty($twitterBootstrap['local_js']);
         $this->assertEquals($twitterBootstrap['local_js'], 'bootstrap.min.js');
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), 'bootstrap.min.js');
