@@ -20,7 +20,6 @@ You can change TwitterBootstrap version:
         version: 3.3.4
         
 You can set TwitterBootstrap local version (it helps if maxcdn doesn't work).
-Those parameters are required:
 
     twitter_bootstrap:
         local_js: '@AppBundle/Resources/public/js/bootstrap.min.js'
