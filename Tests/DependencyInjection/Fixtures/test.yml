@@ -3,7 +3,7 @@ twitter_bootstrap:
     local_fonts_dir: 'fonts/'
     local_css: 'bootstrap.min.css'
     local_theme: 'bootstrap-theme.min.css'
-    local_cdn: '/'
+    local_cdn: '//cdn.site.com'
     version: 3.3.0
     html5: false
     async: true
