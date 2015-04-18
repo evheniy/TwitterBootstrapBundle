@@ -49,9 +49,7 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testWithoutConfiguration()
     {
-        $this->container->loadFromExtension($this->extension->getAlias());
-        $this->container->compile();
-
+        $this->container->loadFromExtension($this->extension->getAlias())->compile();
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap'));
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_js'));
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_fonts_dir'));
@@ -89,7 +87,6 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $this->loadConfiguration($this->container, 'withLocal');
         $this->container->compile();
-
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap'));
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_js'));
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_fonts_dir'));
@@ -119,7 +116,6 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $this->loadConfiguration($this->container, 'test');
         $this->container->compile();
-
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap'));
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_js'));
         $this->assertTrue($this->container->hasParameter('twitter_bootstrap.local_fonts_dir'));
