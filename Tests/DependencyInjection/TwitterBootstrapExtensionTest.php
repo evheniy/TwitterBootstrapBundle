@@ -54,7 +54,7 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     public function testWithoutConfiguration()
     {
         $this->container->loadFromExtension($this->extension->getAlias())->compile();
-        $twitterBootstrap = $this->assertTwitterBootstrap();
+        $twitterBootstrap = $this->assertTwitterBootstrap(1);
         $this->assertNotEmpty($twitterBootstrap['local_js']);
         $this->assertEquals($twitterBootstrap['local_js'], '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js');
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js');
@@ -100,7 +100,7 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     public function testWithLocal()
     {
         $this->loadConfiguration($this->container, 'withLocal')->compile();
-        $twitterBootstrap = $this->assertTwitterBootstrap();
+        $twitterBootstrap = $this->assertTwitterBootstrap(2);
         $this->assertNotEmpty($twitterBootstrap['local_js']);
         $this->assertEquals($twitterBootstrap['local_js'], 'bootstrap.min.js');
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), 'bootstrap.min.js');
@@ -121,7 +121,7 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     public function testTest()
     {
         $this->loadConfiguration($this->container, 'test')->compile();
-        $twitterBootstrap = $this->assertTwitterBootstrap();
+        $twitterBootstrap = $this->assertTwitterBootstrap(3);
         $this->assertNotEmpty($twitterBootstrap['local_js']);
         $this->assertEquals($twitterBootstrap['local_js'], 'bootstrap.min.js');
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), 'bootstrap.min.js');
