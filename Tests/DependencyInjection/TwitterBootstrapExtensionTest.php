@@ -54,20 +54,28 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     public function testWithoutConfiguration()
     {
         $this->container->loadFromExtension($this->extension->getAlias())->compile();
+
         $twitterBootstrap = $this->assertTwitterBootstrap(1);
         $this->assertEquals($twitterBootstrap['local_js'], '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js');
+
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), '@TwitterBootstrapBundle/Resources/public/js/bootstrap.min.js');
         $this->assertEquals($twitterBootstrap['local_fonts_dir'], '@TwitterBootstrapBundle/Resources/public/fonts/');
+
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_fonts_dir'), '@TwitterBootstrapBundle/Resources/public/fonts/');
         $this->assertEquals($twitterBootstrap['local_css'], '@TwitterBootstrapBundle/Resources/public/css/bootstrap.min.css');
+
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_css'), '@TwitterBootstrapBundle/Resources/public/css/bootstrap.min.css');
         $this->assertEquals($twitterBootstrap['local_theme'], '@TwitterBootstrapBundle/Resources/public/css/bootstrap-theme.min.css');
+
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_theme'), '@TwitterBootstrapBundle/Resources/public/css/bootstrap-theme.min.css');
         $this->assertEmpty($twitterBootstrap['local_cdn']);
+
         $this->assertEquals($twitterBootstrap['local_cdn'], '');
         $this->assertEquals($twitterBootstrap['version'], '3.3.4');
+
         $this->assertNotEmpty($twitterBootstrap['html5']);
         $this->assertTrue($twitterBootstrap['html5']);
+
         $this->assertEmpty($twitterBootstrap['async']);
         $this->assertFalse($twitterBootstrap['async']);
     }
@@ -79,20 +87,35 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $this->loadConfiguration($this->container, 'test')->compile();
         $twitterBootstrap = $this->assertTwitterBootstrap(2);
+
         $this->assertEquals($twitterBootstrap['local_js'], 'bootstrap.min.js');
+
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_js'), 'bootstrap.min.js');
+
         $this->assertEquals($twitterBootstrap['local_fonts_dir'], 'fonts/');
+
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_fonts_dir'), 'fonts/');
+
         $this->assertEquals($twitterBootstrap['local_css'], 'bootstrap.min.css');
+
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_css'), 'bootstrap.min.css');
+
         $this->assertEquals($twitterBootstrap['local_theme'], 'bootstrap-theme.min.css');
+
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_theme'), 'bootstrap-theme.min.css');
+
         $this->assertNotEmpty($twitterBootstrap['local_cdn']);
+
         $this->assertEquals($twitterBootstrap['local_cdn'], 'cdn.site.com');
+
         $this->assertEquals($twitterBootstrap['version'], '3.3.0');
+
         $this->assertEmpty($twitterBootstrap['html5']);
+
         $this->assertFalse($twitterBootstrap['html5']);
+
         $this->assertNotEmpty($twitterBootstrap['async']);
+
         $this->assertTrue($twitterBootstrap['async']);
     }
 
