@@ -91,28 +91,11 @@ class TwitterBootstrapExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($twitterBootstrap['local_theme'], $this->container->getParameter('twitter_bootstrap.local_theme'));
         $this->assertEquals($this->container->getParameter('twitter_bootstrap.local_theme'), 'bootstrap-theme.min.css');
         $this->assertNotEmpty($twitterBootstrap['local_cdn']);
-        $this->assertEquals($twitterBootstrap['local_cdn'], 'cdn.site.com');
+        $this->assertEquals($twitterBootstrap['local_cdn'], '//cdn.site.com');
         $this->assertEquals($twitterBootstrap['version'], '3.3.0');
         $this->assertEmpty($twitterBootstrap['html5']);
         $this->assertFalse($twitterBootstrap['html5']);
         $this->assertNotEmpty($twitterBootstrap['async']);
         $this->assertTrue($twitterBootstrap['async']);
-    }
-
-    /**
-     * Test filterCdn method
-     */
-    public function testFilterCdn()
-    {
-        $reflectionClass = new \ReflectionClass('\Evheniy\TwitterBootstrapBundle\DependencyInjection\TwitterBootstrapExtension');
-        $method = $reflectionClass->getMethod('filterCdn');
-        $method->setAccessible(true);
-        $this->assertEquals($method->invoke($this->extension, ''), '');
-        $this->assertEquals($method->invoke($this->extension, 'cdn.site.com'), 'cdn.site.com');
-        $this->assertEquals($method->invoke($this->extension, '//cdn.site.com'), 'cdn.site.com');
-        $this->assertEquals($method->invoke($this->extension, 'http://cdn.site.com'), 'cdn.site.com');
-        $this->assertEquals($method->invoke($this->extension, 'http://cdn.site.com/'), 'cdn.site.com');
-        $this->assertEquals($method->invoke($this->extension, 'https://cdn.site.com'), 'cdn.site.com');
-        $this->assertEquals($method->invoke($this->extension, 'https://cdn.site.com/'), 'cdn.site.com');
     }
 }
