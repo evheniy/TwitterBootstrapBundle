@@ -5,9 +5,9 @@ TwitterBootstrapBundle
 
 [![Latest Stable Version](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/v/stable.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![Total Downloads](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/downloads.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![Latest Unstable Version](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/v/unstable.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle) [![License](https://poser.pugx.org/evheniy/twitter-bootstrap-bundle/license.svg)](https://packagist.org/packages/evheniy/twitter-bootstrap-bundle)
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/evheniy/TwitterBootstrapBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/evheniy/TwitterBootstrapBundle/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/evheniy/TwitterBootstrapBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/evheniy/TwitterBootstrapBundle/build-status/master)
-
 [![Build Status](https://travis-ci.org/evheniy/TwitterBootstrapBundle.svg?branch=master)](https://travis-ci.org/evheniy/TwitterBootstrapBundle)
+[![Coverage Status](https://coveralls.io/repos/evheniy/TwitterBootstrapBundle/badge.svg?branch=master&service=github)](https://coveralls.io/github/evheniy/TwitterBootstrapBundle?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/evheniy/TwitterBootstrapBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/evheniy/TwitterBootstrapBundle/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/evheniy/TwitterBootstrapBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/evheniy/TwitterBootstrapBundle/build-status/master)
 
 This bundle provides TwitterBootstrap in Symfony2 from CDN maxcdn.bootstrapcdn.com
 
